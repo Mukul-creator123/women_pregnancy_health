@@ -27,12 +27,11 @@ const Footer = (props) => {
                   <div className="col-lg-4 px-lg-5 mb-4 mb-lg-0">
                     <h3 className="footer_title">Contact</h3>
                     <p className="footer_text">
-                      <a>dodiyameet041@gmail.com</a>
+                      <a>chaudharypriyanka49956@gmail.com</a>
                       <br />
                       <a className="footer-address">
-                        K.T Marg, Vidyavardhini's College of Engineering and
-                        Technology, <br />
-                        Vasai, Maharashtra, India
+                      Jigyasa University, <br />
+                      Dehradun, Uttarakhand, India
                       </a>
                     </p>
                   </div>
@@ -83,12 +82,12 @@ const Footer = (props) => {
                   <div className="col-lg-4 px-lg-5 mb-4 mb-lg-0">
                     <h3 className="footer_title">Contact</h3>
                     <p className="footer_text">
-                      <a>dodiyameet041@gmail.com</a>
+                      <a>chaudharypriyanka49956@gmail.com</a>
                       <br />
                       <a className="footer-address">
-                        K.T Marg, Vidyavardhini's College of Engineering and
-                        Technology, <br />
-                        Vasai, Maharashtra, India
+                      Jigyasa University,
+                         <br />
+                         Dehradun, Uttarakhand, India
                       </a>
                     </p>
                   </div>
@@ -96,14 +95,14 @@ const Footer = (props) => {
                     <h3 className="footer_title">Social Media</h3>
                     <p>
                       <a
-                        href="https://www.linkedin.com/in/meetdodiya/"
+                        href="https://www.linkedin.com/school/jigyasa-university/"
                         className="footer_social_media_icon"
                         style={{ color: "white" }}
                       >
                         <BsLinkedin size={25} />
                       </a>
                       <a
-                        href="https://github.com/MeetDOD"
+                        href="https://www.facebook.com/Jigyasauniversity"
                         className="footer_social_media_icon"
                         style={{ color: "white" }}
                       >

@@ -6,6 +6,7 @@ import toast from 'react-hot-toast'
 import reports from '../images/report.png'
 import Navbar from '../Components/Navbar/Navbar'
 import Footer from '../Components/Footer/Footer'
+import { router, useNavigate } from 'react-router-dom'
 
 const Report = () => {
    
@@ -16,55 +17,95 @@ const Report = () => {
     const [hdl, sethdl] = useState('')
     const [sysBP, setsysBP] = useState('')
     const [diaBP, setdiaBP] = useState('')
+    const navigate = useNavigate();
 
-    const handleSubmit = async (e) => {
-        e.preventDefault();
+    // const [setSubmittedData,setsetSubmittedData]= useState(null)
 
-        if (!hemoglobin.trim()) {
-            toast.error('Report is Required !')
-            return false
-        }
-        if (!age.trim()) {
-            toast.error('PinCode is Required !')
-            return false
-        }
-        if (!numPregnancies.trim()) {
-            toast.error('no of pregnancy  is Required !')
-            return false
-        }
-        if (!gestationWeeks.trim()) {
-            toast.error('gestation  is Required !')
-            return false
-        }
-        if (!hdl.trim()) {
-            toast.error('hdl is Required !')
-            return false
-        }
-        if (!sysBP.trim()) {
-            toast.error('Address is Required !')
-            return false
-        }
-        if (!diaBP.trim()) {
-            toast.error('Address is Required !')
-            return false
-        }
-        try {
-            const res = await axios.post('http://localhost:5000/api/patients',
-                { hemoglobin,
-                    age,
-                    numPregnancies,
-                    gestationWeeks,
-                    hdl,
-                    sysBP,
-                    diaBP });
+    // const handleSubmit = async (e) => {
+    //     e.preventDefault();
 
-            if (res.status === 201) {
-                toast.success('Incident Reported Successfully')
-            }
-        } catch (err) {
-            toast.error('Error in Sending Report')
-        }
+    //     if (!hemoglobin.trim()) {
+    //         toast.error('Report is Required !')
+    //         return false
+    //     }
+    //     if (!age.trim()) {
+    //         toast.error('PinCode is Required !')
+    //         return false
+    //     }
+    //     if (!numPregnancies.trim()) {
+    //         toast.error('no of pregnancy  is Required !')
+    //         return false
+    //     }
+    //     if (!gestationWeeks.trim()) {
+    //         toast.error('gestation  is Required !')
+    //         return false
+    //     }
+    //     if (!hdl.trim()) {
+    //         toast.error('hdl is Required !')
+    //         return false
+    //     }
+    //     if (!sysBP.trim()) {
+    //         toast.error('sysBp is Required !')
+    //         return false
+    //     }
+    //     if (!diaBP.trim()) {
+    //         toast.error('diaBP is Required !')
+    //         return false
+    //     }
+    //     // try {
+    //     //     const res = await axios.post('http://localhost:5000/api/patients',
+    //     //         { hemoglobin,
+    //     //             age,
+    //     //             numPregnancies,
+    //     //             gestationWeeks,
+    //     //             hdl,
+    //     //             sysBP,
+    //     //             diaBP });
+
+    //     //     if (res.status === 201) {
+    //     //         toast.success('Incident Reported Successfully')
+    //     //     }
+    //     // } catch (err) {
+    //     //     toast.error('Error in Sending Report')
+    //     // }
+    //     const data = {
+    //         hemoglobin,
+    //         age,
+    //         numPregnancies,
+    //         gestationWeeks,
+    //         hdl,
+    //         sysBP,
+    //         diaBP
+    //     };
+    
+    //     setSubmittedData(data);
+    //     toast.success('Report Submitted Successfully (Simulated)');
+    // }
+    const [submittedData, setSubmittedData] = useState(null);
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    
+
+    const data = {
+      hemoglobin,
+      age,
+      numPregnancies,
+      gestationWeeks,   
+      hdl,
+      sysBP,
+      diaBP,
+    };
+    if(!hemoglobin || !age || !numPregnancies || !gestationWeeks || !hdl || !sysBP || !diaBP){  
+        alert("Please fill all the fields");
     }
+   else{
+    setSubmittedData(data); // ✅ Now works correctly
+    toast.success('✅ Data saved successfully! , our doctors will contact you as soon as possible ');
+    navigate('/');
+   }
+  };
     return (
         <>
             <Navbar />
